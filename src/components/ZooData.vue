@@ -108,39 +108,36 @@ export default {
       this.speciesId = id;
     },
     fetchAllGenuses() {
-      fetch('http://localhost:5000/genus/all')
-      .then(response => response.json())
-      .then(json => this.genusList = json)
+      this.$http.get('/genus/all')
+      .then(res => this.genusList = res.data)
       .catch(e => {
         return this.$buefy.toast.open({
           duration: 5000,
-          message: `Error fetching the database: ${e.message}`,
+          message: `Error fetching the all genuses: ${e.message}`,
           position: 'is-top',
           type: 'is-danger'
         })
       })
     },
     fetchAllSpecies() {
-      fetch('http://localhost:5000/species/all')
-      .then(response => response.json())
-      .then(json => this.speciesList = json)
+      this.$http.get('/species/all')
+      .then(res => this.speciesList = res.data)
       .catch(e => {
         return this.$buefy.toast.open({
           duration: 5000,
-          message: `Error fetching the database: ${e.message}`,
+          message: `Error fetching the all species: ${e.message}`,
           position: 'is-top',
           type: 'is-danger'
         })
       })
     },
     fetchAllSpecimen() {
-      fetch('http://localhost:5000/specimen/all')
-      .then(response => response.json())
-      .then(json => this.specimenList = json)
+      this.$http.get('/specimen/all')
+      .then(res => this.specimenList = res.data)
       .catch(e => {
         return this.$buefy.toast.open({
           duration: 5000,
-          message: `Error fetching the database: ${e.message}`,
+          message: `Error fetching the all specimen: ${e.message}`,
           position: 'is-top',
           type: 'is-danger'
         })

@@ -32,14 +32,11 @@ export default {
 
   methods: {
   	submit() {
-      fetch('http://localhost:5000/genus', {
-        method: 'POST',
-        body: JSON.stringify(this.data),
-        headers: {
-          'Content-Type': 'application/json'
-        },
+      this.$http.post('/genus', {
+        ...this.data
       })
       .then(response => {
+        console.log(response)
         if (response.status == 200) {
           this.$buefy.toast.open({
             duration: 3000,

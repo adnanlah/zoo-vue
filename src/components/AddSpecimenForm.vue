@@ -44,12 +44,9 @@ export default {
 
   methods: {
     submit() {
-      fetch('http://localhost:5000/specimen', {
-        method: 'POST',
-        body: JSON.stringify({...this.data, species: {id: this.speciesId}}),
-        headers: {
-          'Content-Type': 'application/json'
-        },
+      this.$http.post('/specimen', {
+        ...this.data,
+        species: {id: this.speciesId}
       })
       .then(response => {
         if (response.status == 200) {
