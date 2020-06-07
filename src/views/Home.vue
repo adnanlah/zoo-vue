@@ -17,7 +17,12 @@ export default {
 </script>
 
 <style>
+  html,
 	body {
-		background: #10375c;
+    height: 100%;
 	}
+  body {
+    padding: 50px 0 !important;
+		background: #10375c;
+  }
 </style>

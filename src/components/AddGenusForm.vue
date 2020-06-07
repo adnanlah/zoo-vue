@@ -25,7 +25,7 @@ export default {
   data () {
     return {
     	data: {
-    		scientific_name: 'genuus'
+    		scientific_name: ''
     	}
     }
   },
